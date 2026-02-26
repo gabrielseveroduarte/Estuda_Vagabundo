@@ -1,63 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".login.LoginActivity">
+    android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Bem-vindo ao Estuda+"
+        android:text="Bem-vindo ao \n Estuda+"
         android:textColor="#358A39"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tv_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10sp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Seu Aplicativo para controle de estudos"
+        android:text="Seu aplicativo para controle de estudos"
         android:textColor="#494242"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
     <EditText
         android:id="@+id/edit_usuario"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:inputType="textEmailAddress"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="100dp"
         android:hint="Digite seu usuário"
-        android:paddingHorizontal="20sp" />
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
 
     <EditText
         android:id="@+id/edit_senha"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="15dp"
         android:hint="Digite sua senha"
-        android:inputType="numberPassword"
-        android:paddingHorizontal="25sp" />
+        android:inputType="textPassword"
+
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/edit_usuario" />
 
     <TextView
+        android:id="@+id/tv_forget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:text="Esqueci minha senha"
-        android:textColor="#ff1565c0" />
+        android:textColor="#ff1565c0"
+        app:layout_constraintStart_toStartOf="@id/edit_senha"
+        app:layout_constraintTop_toBottomOf="@id/edit_senha" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/button_login"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:text="Login"/>
+        android:text="Login"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="@id/edit_senha"
+        app:layout_constraintStart_toStartOf="@id/edit_senha"
+        app:layout_constraintTop_toBottomOf="@id/tv_forget" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
