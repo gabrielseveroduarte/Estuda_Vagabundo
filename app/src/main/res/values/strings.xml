@@ -4,4 +4,8 @@
     <!-- Login Screen -->
     <string name="login_title">Bem-vindo ao \n Estuda+</string>
     <string name="login_subtitle">Seu aplicativo para controle de estudos</string>
+    <string name="digite_seu_usu_rio">Digite seu usuário</string>
+    <string name="digite_sua_senha">Digite sua senha</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="login">Login</string>
 </resources>
