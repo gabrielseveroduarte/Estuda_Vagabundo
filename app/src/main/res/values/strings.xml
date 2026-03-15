@@ -4,16 +4,17 @@
     <!-- Login Screen -->
     <string name="login_title">Bem-vindo ao \n Estuda+</string>
     <string name="login_subtitle">Seu aplicativo para controle de estudos</string>
-    <string name="digite_seu_usu_rio">Digite seu usuário</string>
-    <string name="digite_sua_senha">Digite sua senha</string>
-    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="type_your_user">Digite seu usuário</string>
+    <string name="type_your_password">Digite sua senha</string>
+    <string name="forgot_password">Esqueci minha senha</string>
     <string name="login">Login</string>
-    <string name="materias_adicionadas">MATERIAS ADICIONADAS</string>
-    <string name="cadastre_o_que_voce_ira_estudar">Cadastre o que voce ira estudar</string>
-    <string name="nome_da_materia">Nome da materia</string>
-    <string name="este_texto_parece_estar_em_um_papel">Este texto parece estar em um papel.</string>
-    <string name="cadastre_as_materias_que_voce_ira_estudar">Cadastre as materias que voce ira estudar</string>
-    <string name="adicionar_materias">Adicionar Materias</string>
-    <string name="portugues">Portugues</string>
-    <string name="finalizar_e_salvar">FINALIZAR E SALVAR</string>
+
+    <!-- Add Subject Screen -->
+    <string name="added_subjects">MATÉRIAS ADICIONADAS</string>
+    <string name="portuguese">Português</string>
+    <string name="finish_save">FINALIZAR E SALVAR</string>
+    <string name="add_subjects_you_will_study">Cadastre as matérias que voce irá estudar</string>
+    <string name="subject_name">Nome da matéria</string>
+    <string name="add_subjects">Adicionar Matérias</string>
+    <string name="math">Matematica</string>
 </resources>

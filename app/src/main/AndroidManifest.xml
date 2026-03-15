@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EstudaVagabundo">
         <activity
-            android:name=".AddSubject"
+            android:name=".subject.AddSubject"
             android:exported="false" />
         <activity
             android:name=".login.LoginActivity"

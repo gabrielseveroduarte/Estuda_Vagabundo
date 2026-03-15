@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddSubject">
+    tools:context=".subject.AddSubject">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_start"
@@ -22,11 +22,11 @@
         app:layout_constraintGuide_end="24dp" />
 
     <TextView
-        android:id="@+id/tv_adicionar_materia"
+        android:id="@+id/tv_add_subjects"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="@string/adicionar_materias"
+        android:text="@string/add_subjects"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constrainedWidth="true"
@@ -35,19 +35,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/subtitle"
+        android:id="@+id/tv_subtitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/cadastre_as_materias_que_voce_ira_estudar"
+        android:text="@string/add_subjects_you_will_study"
         android:textAlignment="center"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/tv_adicionar_materia" />
+        app:layout_constraintTop_toBottomOf="@id/tv_add_subjects" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_papel"
+        android:id="@+id/cardview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -56,7 +56,7 @@
         app:cardElevation="10dp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/subtitle">
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -69,7 +69,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nome da materia"
+                android:hint="@string/subject_name"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
@@ -95,22 +95,22 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
-        android:id="@+id/materias_adicionadas"
+        android:id="@+id/tv_added_subjects"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/materias_adicionadas"
+        android:text="@string/added_subjects"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/card_papel" />
+        app:layout_constraintTop_toBottomOf="@id/cardview" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/meu_input_layout"
+        android:id="@+id/til_portuguese_subject"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/portugues"
+        android:hint="@string/portuguese"
         app:boxCornerRadiusBottomEnd="8dp"
         app:boxCornerRadiusBottomStart="8dp"
         app:boxCornerRadiusTopEnd="8dp"
@@ -120,10 +120,10 @@
         app:endIconMode="custom"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/materias_adicionadas">
+        app:layout_constraintTop_toBottomOf="@id/tv_added_subjects">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_portugues"
+            android:id="@+id/edt_portuguese_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
@@ -131,12 +131,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/meu_input_layout2"
+        android:id="@+id/til_math_subject"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:hint="Matematica"
+        android:hint="@string/math"
         app:boxCornerRadiusBottomEnd="8dp"
         app:boxCornerRadiusBottomStart="8dp"
         app:boxCornerRadiusTopEnd="8dp"
@@ -146,10 +146,10 @@
         app:endIconMode="custom"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/meu_input_layout">
+        app:layout_constraintTop_toBottomOf="@id/til_portuguese_subject">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_matematica"
+            android:id="@+id/edt_math_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
@@ -159,13 +159,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_finish_save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/finalizar_e_salvar"
+        android:text="@string/finish_save"
         app:cornerRadius="16dp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/meu_input_layout2" />
+        app:layout_constraintTop_toBottomOf="@id/til_math_subject" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
