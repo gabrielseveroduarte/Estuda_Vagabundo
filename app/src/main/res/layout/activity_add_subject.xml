@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cadastre_o_que_voce_ira_estudar"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@id/meu_texto2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -84,5 +84,67 @@
         app:layout_constraintStart_toStartOf="@id/card_papel"
         app:layout_constraintTop_toBottomOf="@id/card_papel" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/meu_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Portugues"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/baseline_edit_24"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/meu_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+   <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/meu_input_layout2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Matematica"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/baseline_edit_24"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeColor="@color/black"
+       app:layout_constraintStart_toStartOf="@id/meu_input_layout"
+       app:layout_constraintTop_toBottomOf="@id/meu_input_layout"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/meu_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        app:circularflow_defaultRadius="20sp"
+        android:layout_marginHorizontal="30sp"
+        android:text="FINALIZAR E SALVAR"
+        app:layout_constraintStart_toStartOf="@id/meu_input_layout2"
+        app:layout_constraintTop_toBottomOf="@id/meu_input_layout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
