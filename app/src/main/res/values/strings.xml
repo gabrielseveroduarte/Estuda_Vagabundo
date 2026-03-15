@@ -14,4 +14,6 @@
     <string name="este_texto_parece_estar_em_um_papel">Este texto parece estar em um papel.</string>
     <string name="cadastre_as_materias_que_voce_ira_estudar">Cadastre as materias que voce ira estudar</string>
     <string name="adicionar_materias">Adicionar Materias</string>
+    <string name="portugues">Portugues</string>
+    <string name="finalizar_e_salvar">FINALIZAR E SALVAR</string>
 </resources>
