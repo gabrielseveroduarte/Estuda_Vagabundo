@@ -2,6 +2,7 @@ package br.com.estudavagabundo.login
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import android.util.Patterns
@@ -16,6 +17,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import br.com.estudavagabundo.R
 import br.com.estudavagabundo.databinding.ActivityLoginBinding
+import br.com.estudavagabundo.subject.AddSubject
 
 class LoginActivity : AppCompatActivity() {
 
@@ -54,6 +56,11 @@ class LoginActivity : AppCompatActivity() {
                             .matches()
                 }
             }
+        }
+
+        binding.buttonLogin.setOnClickListener {
+            startActivity(Intent(this, AddSubject::class.java))
+            finish()
         }
     }
 
