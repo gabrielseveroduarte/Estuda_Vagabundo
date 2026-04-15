@@ -6,8 +6,14 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.estudavagabundo.databinding.RvSubjectItemBinding
 
 class SubjectAdapter(
-    private val subjectModelList: List<SubjectsData>
+    private val subjectModelList: MutableList<SubjectsData>
 ) : RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>() {
+
+    fun addSubject(subject: SubjectsData) {
+        subjectModelList.add(subject)
+        notifyItemInserted(subjectModelList.size - 1)
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

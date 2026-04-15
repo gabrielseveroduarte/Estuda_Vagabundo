@@ -13,20 +13,12 @@ class AddSubject : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddSubjectBinding
 
-    private val SubjectsData : List<SubjectsData> = listOf(
-        SubjectsData("Math"),
-        SubjectsData("Portuguese"),
-        SubjectsData("Constitutional Law")
-    )
+    private val SubjectsData : MutableList<SubjectsData> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_add_subject)
-
-
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -37,6 +29,14 @@ class AddSubject : AppCompatActivity() {
         val adapter = SubjectAdapter(SubjectsData)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
+
+        val nome = binding.edtSubjectName.text.toString().trim()
+        if (nome.isNotEmpty()) {
+            adapter.addSubject(SubjectsData(nome))
+            binding.edtSubjectName.text?.clear()
+        } else {
+            binding.tilSubjectName.error = "Digite o nome da matéria"
+        }
 
     }
 }
