@@ -28,6 +28,30 @@ class SubjectAdapter(
         position: Int
     ) {
         holder.binding.tvSubject.text = subjectModelList[position].subject
+
+        holder.binding.btnDelete.setOnClickListener {
+            subjectModelList.removeAt(position)
+            notifyItemRemoved(position)
+        }
+
+        holder.binding.btnEdit.setOnClickListener {
+            val context = holder.itemView.context
+            val input = android.widget.EditText(context)
+            input.setText(subjectModelList[position].subject)
+
+            android.app.AlertDialog.Builder(context)
+                .setTitle("Editar matéria")
+                .setView(input)
+                .setPositiveButton("Salvar") { _, _ ->
+                    val novoNome = input.text.toString().trim()
+                    if (novoNome.isNotEmpty()) {
+                        subjectModelList[position] = SubjectsData(novoNome)
+                        notifyItemChanged(position)
+                    }
+                }
+                .setNegativeButton("Cancelar", null)
+                .show()
+        }
     }
 
     override fun getItemCount(): Int {
