@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.estudavagabundo.databinding.RvSubjectItemBinding
 
 class SubjectAdapter(
-    private val subjectModelList: MutableList<SubjectsData>
+    private val subjects: MutableList<SubjectsData>,
+    private val onDelete: (SubjectsData) -> Unit,
+    private val onEdit: (SubjectsData, String) -> Unit
 ) : RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>() {
 
-    fun addSubject(subject: SubjectsData) {
-        subjectModelList.add(subject)
-        notifyItemInserted(subjectModelList.size - 1)
+    fun updateList(newList: List<SubjectsData>) {
+        subjects.clear()
+        subjects.addAll(newList)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(
@@ -27,17 +30,16 @@ class SubjectAdapter(
         holder: SubjectViewHolder,
         position: Int
     ) {
-        holder.binding.tvSubject.text = subjectModelList[position].subject
+        holder.binding.tvSubject.text = subjects[position].subject
 
         holder.binding.btnDelete.setOnClickListener {
-            subjectModelList.removeAt(position)
-            notifyItemRemoved(position)
+            onDelete(subjects[position])
         }
 
         holder.binding.btnEdit.setOnClickListener {
             val context = holder.itemView.context
             val input = android.widget.EditText(context)
-            input.setText(subjectModelList[position].subject)
+            input.setText(subjects[position].subject)
 
             android.app.AlertDialog.Builder(context)
                 .setTitle("Editar matéria")
@@ -45,8 +47,7 @@ class SubjectAdapter(
                 .setPositiveButton("Salvar") { _, _ ->
                     val novoNome = input.text.toString().trim()
                     if (novoNome.isNotEmpty()) {
-                        subjectModelList[position] = SubjectsData(novoNome)
-                        notifyItemChanged(position)
+                        onEdit(subjects[position], novoNome)
                     }
                 }
                 .setNegativeButton("Cancelar", null)
@@ -55,7 +56,7 @@ class SubjectAdapter(
     }
 
     override fun getItemCount(): Int {
-        return subjectModelList.size
+        return subjects.size
     }
 
     class SubjectViewHolder(val binding: RvSubjectItemBinding) :
